@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.CreateAccountActivity">
+
+    <View
+        android:id="@+id/view_title_bar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="60dp"/>
+
+    <ImageView
+        android:id="@+id/image_view_previous_page"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/icon_previous_page"
+        app:layout_constraintTop_toTopOf="@+id/view_title_bar"
+        app:layout_constraintStart_toStartOf="@+id/view_title_bar"
+        app:layout_constraintBottom_toBottomOf="@+id/view_title_bar"
+        app:layout_constraintDimensionRatio="70:58"
+        android:layout_width="0dp"
+        android:layout_height="15dp"/>
+
+    <ImageView
+        android:src="@drawable/icon_blue_bird"
+        app:layout_constraintTop_toTopOf="@+id/view_title_bar"
+        app:layout_constraintStart_toStartOf="@+id/view_title_bar"
+        app:layout_constraintEnd_toEndOf="@+id/view_title_bar"
+        app:layout_constraintBottom_toBottomOf="@+id/view_title_bar"
+        app:layout_constraintDimensionRatio="92:76"
+        android:layout_width="0dp"
+        android:layout_height="20dp"/>
+
+    <TextView
+        android:layout_marginTop="32dp"
+        android:id="@+id/text_view_create_account"
+        android:textStyle="bold"
+        android:layout_marginStart="32dp"
+        android:textColor="#000000"
+        android:textSize="30dp"
+        android:text="建立你的帳戶"
+        app:layout_constraintTop_toBottomOf="@id/view_title_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:textColor="#000000"
+        android:enabled="false"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="150dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:id="@+id/edit_text_name"
+        android:hint="姓名"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_create_account"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:textColor="#000000"
+        android:enabled="false"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:id="@+id/edit_text_phone"
+        android:hint="電話"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+    <View
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_text_phone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/view_positioning_line"
+        android:layout_width="0dp"
+        android:layout_height="2dp"/>
+
+    <TextView
+        android:textSize="15dp"
+        android:layout_marginBottom="4dp"
+        android:id="@+id/text_view_service_terms"
+        app:layout_constraintStart_toStartOf="@id/edit_text_phone"
+        app:layout_constraintEnd_toEndOf="@id/edit_text_phone"
+        app:layout_constraintBottom_toTopOf="@+id/view_positioning_line"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:textSize="20dp"
+        android:layout_marginTop="4dp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:text="註冊"
+        android:id="@+id/button_registered"
+        android:background="@drawable/background_activity_create_account_completion_registered"
+        app:layout_constraintStart_toStartOf="@id/edit_text_phone"
+        app:layout_constraintEnd_toEndOf="@id/edit_text_phone"
+        app:layout_constraintTop_toBottomOf="@+id/view_positioning_line"
+        android:layout_width="0dp"
+        android:layout_height="42dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

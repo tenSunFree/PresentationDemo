@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+android:fitsSystemWindows="true": 避免佈局跑到狀態欄和導航欄下面重疊
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.CreateAccountActivity">
+
+    <View
+        android:id="@+id/view_title_bar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="60dp"/>
+
+    <ImageView
+        android:src="@drawable/icon_blue_bird"
+        app:layout_constraintTop_toTopOf="@+id/view_title_bar"
+        app:layout_constraintStart_toStartOf="@+id/view_title_bar"
+        app:layout_constraintEnd_toEndOf="@+id/view_title_bar"
+        app:layout_constraintBottom_toBottomOf="@+id/view_title_bar"
+        app:layout_constraintDimensionRatio="92:76"
+        android:layout_width="0dp"
+        android:layout_height="20dp"/>
+
+    <!--
+    android:fillViewport="true": 讓子佈局可以撐滿整個屏幕
+    -->
+    <androidx.core.widget.NestedScrollView
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@+id/view_title_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/view_bottom_bar"
+        android:layout_width="0dp"
+        android:layout_height="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_marginTop="32dp"
+                android:id="@+id/text_view_create_account"
+                android:textStyle="bold"
+                android:layout_marginStart="32dp"
+                android:textColor="#000000"
+                android:textSize="30dp"
+                android:text="建立你的帳戶"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:singleLine="true"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="150dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:id="@+id/edit_text_name"
+                android:hint="姓名"
+                app:layout_constraintTop_toBottomOf="@+id/text_view_create_account"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:inputType="number"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="32dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:id="@+id/edit_text_phone"
+                android:hint="電話"
+                app:layout_constraintTop_toBottomOf="@+id/edit_text_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:id="@+id/view_separation_line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/view_bottom_bar"
+        android:background="#E4E9ED"
+        android:layout_width="0dp"
+        android:layout_height="1dp"/>
+
+    <View
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/view_bottom_bar"
+        android:layout_width="0dp"
+        android:layout_height="55dp"/>
+
+    <TextView
+        android:layout_marginStart="8dp"
+        android:textSize="15dp"
+        android:textColor="#299BE3"
+        android:text="改用電子郵件"
+        app:layout_constraintStart_toStartOf="@+id/view_bottom_bar"
+        app:layout_constraintTop_toTopOf="@+id/view_bottom_bar"
+        app:layout_constraintBottom_toBottomOf="@+id/view_bottom_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:text="下一步"
+        android:id="@+id/button_next_step"
+        android:background="@drawable/background_activity_create_account_next_step"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/view_bottom_bar"
+        app:layout_constraintTop_toTopOf="@+id/view_bottom_bar"
+        app:layout_constraintBottom_toBottomOf="@+id/view_bottom_bar"
+        app:layout_constraintDimensionRatio="20:9"
+        android:layout_width="0dp"
+        android:layout_height="30dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
